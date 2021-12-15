@@ -13,30 +13,6 @@
                     @method('PUT')
                     <div class="shadow overflow-hidden sm:rounded-md">
                         <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="description" class="block font-medium text-sm text-gray-700">Name</label>
-                            <input type="text" name="name" id="name" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('name', $task->name) }}" />
-                            @error('name')
-                            <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="description" class="block font-medium text-sm text-gray-700">Price</label>
-                            <input type="text" name="price" id="price" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('price', $task->price) }}" />
-                            @error('price')
-                            <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="description" class="block font-medium text-sm text-gray-700">Picture</label>
-                            <input type="text" name="picture" id="picture" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('picture', $task->picture) }}" />
-                            @error('picture')
-                            <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="description" class="block font-medium text-sm text-gray-700">Description</label>
                             <input type="text" name="description" id="description" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('description', $task->description) }}" />

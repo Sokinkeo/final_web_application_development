@@ -7,9 +7,9 @@
 
     <div>
         <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
-            <div class="block mb-8">
-                <a href="{{ route('users.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add User</a>
-            </div>
+            <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
+                <a href="{{ route('users.create') }}">Add User</a>
+            </button>
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -33,7 +33,7 @@
                                         Roles
                                     </th>
                                     <th scope="col" width="200" class="px-6 py-3 bg-gray-50">
-
+                                        Controls
                                     </th>
                                 </tr>
                                 </thead>
@@ -60,8 +60,6 @@
                                             {{ $user->role_id }}
                                         </td>
 
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                        </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                             <a href="{{ route('users.show', $user->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2">View</a>

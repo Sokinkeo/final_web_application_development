@@ -7,9 +7,6 @@
 
     <div>
         <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
-            <div class="block mb-8">
-                <a href="{{ route('users.index') }}" class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">Back to list</a>
-            </div>
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -41,6 +38,14 @@
                                 </tr>
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Role_id (0 For Admin and 1 for User)
+                                    </th>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                        {{ $user->role_id }}
+                                    </td>
+                                </tr>
+                                <tr class="border-b">
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Email Verified At
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
@@ -53,8 +58,10 @@
                     </div>
                 </div>
             </div>
-            <div class="block mt-8">
-                <a href="{{ route('users.index') }}" class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">Back to list</a>
+            <div class="flex items-center justify-end px-4 py-3 text-right sm:px-6">
+                <a href="{{ route('users.index') }}" class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">
+                    Back to list
+                </a>
             </div>
         </div>
     </div>

@@ -16,16 +16,20 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+                @if (auth()->user()->role_id==1 || auth()->user()->role_id==0)
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks')">
-                        {{ __('Tasks') }}
+                        {{ __('Item Page') }}
                     </x-jet-nav-link>
                 </div>
+                @endif
+                @if (auth()->user()->role_id==0)
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users')">
                         {{ __('Users') }}
                     </x-jet-nav-link>
                 </div>
+                @endif
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
