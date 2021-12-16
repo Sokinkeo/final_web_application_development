@@ -19,11 +19,12 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="antialiased">
         <div>
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block bg-white">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                     @else
@@ -38,57 +39,25 @@
         </div>
         <div class="bg-white">
             <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-                <h2 class="sr-only">Products</h2>
+                <h2 class="sr-only">Product on sale this week</h2>
 
-                <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-                    <a href="#" class="group">
-                        <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                            <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="w-full h-full object-center object-cover group-hover:opacity-75">
+                <div class="grid md:grid-cols-2 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8" >
+                    @foreach($tasks as $task)
+                    <a href="#" class="group" style="padding-bottom: 10px; padding-right: 10px;">
+                        <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8" >
+                            <img src="{{$task->picture}}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="w-full h-full object-center object-cover group-hover:opacity-75">
                         </div>
-                        <h3 class="mt-4 text-sm text-gray-700">
-                            Earthen Bottle
+                        <h3 class="mt-4 font-semibold text-sm text-gray-700">
+                            {{ $task->name }}
                         </h3>
                         <p class="mt-1 text-lg font-medium text-gray-900">
-                            $48
+                            {{ $task->price }} Baht
+                        </p>
+                        <p class="mt-4 text-sm text-gray-700">
+                            {{ $task->description }}
                         </p>
                     </a>
-
-                    <a href="#" class="group">
-                        <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                            <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="w-full h-full object-center object-cover group-hover:opacity-75">
-                        </div>
-                        <h3 class="mt-4 text-sm text-gray-700">
-                            Nomad Tumbler
-                        </h3>
-                        <p class="mt-1 text-lg font-medium text-gray-900">
-                            $35
-                        </p>
-                    </a>
-
-                    <a href="#" class="group">
-                        <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                            <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="w-full h-full object-center object-cover group-hover:opacity-75">
-                        </div>
-                        <h3 class="mt-4 text-sm text-gray-700">
-                            Focus Paper Refill
-                        </h3>
-                        <p class="mt-1 text-lg font-medium text-gray-900">
-                            $89
-                        </p>
-                    </a>
-
-                    <a href="#" class="group">
-                        <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                            <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="w-full h-full object-center object-cover group-hover:opacity-75">
-                        </div>
-                        <h3 class="mt-4 text-sm text-gray-700">
-                            Machined Mechanical Pencil
-                        </h3>
-                        <p class="mt-1 text-lg font-medium text-gray-900">
-                            $35
-                        </p>
-                    </a>
-
+                    @endforeach
                     <!-- More products... -->
                 </div>
             </div>

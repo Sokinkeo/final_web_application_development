@@ -24,6 +24,20 @@ class ItemSeeder extends Seeder
                 'picture' => "https://foodbuzz.site/api/v1/files/EDBF7EDB-5C1F-41CC-A7E4-930CA30D5F2D",
                 'description' => "Chicken Fry with kapow very deliscious",
             ],
+            [
+                'id' => 3,
+                'name' => "Kapow Kai",
+                'price' => 40,
+                'picture' => "https://foodbuzz.site/api/v1/files/EDBF7EDB-5C1F-41CC-A7E4-930CA30D5F2D",
+                'description' => "Chicken Fry with kapow very deliscious",
+            ],
+            [
+                'id' => 4,
+                'name' => "Kapow Kai",
+                'price' => 40,
+                'picture' => "https://foodbuzz.site/api/v1/files/EDBF7EDB-5C1F-41CC-A7E4-930CA30D5F2D",
+                'description' => "Chicken Fry with kapow very deliscious",
+            ],
         ];
 
         Task::insert($tasks);
